@@ -1,0 +1,8 @@
+.popup__user-bio {
+    margin-bottom: 48px;
+    opacity: 0.2;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #000000;
+}

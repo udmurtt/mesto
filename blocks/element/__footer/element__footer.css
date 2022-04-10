@@ -1,8 +1,7 @@
-.profile {
-    margin: 0 auto;
+.element__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 880px;
-    margin-bottom: 51px;
+    padding: 25px 20px 31px 21px;
+    box-sizing: border-box;
 }
