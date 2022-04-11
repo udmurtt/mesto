@@ -72,13 +72,13 @@
         <p class="footer__text">© 2020 Mesto Russia</p>
     </footer>
     <div class="popup popup_closed">
-        <div class="popup__conteiner">
-            <button class="popup__close"></button>
+        <form action="#" class="popup__conteiner">
+            <button type="reset" class="popup__close"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <input class="popup__user-name" type="text" name="user_name">
-            <textarea class="popup__user-bio" name="student_bio"></textarea>
+            <input class="popup__user-name" type="text" name="username" placeholder="имя пользователя" value="">
+            <input type="text" class="popup__user-bio" name="userbio" placeholder="кратко о себе" value="">
             <button class="popup__save" type="submit">Сохранить</button>
-        </div>
+        </form>
     </div>
     <script src="./scripts/scripts.js"></script>
 </body>
