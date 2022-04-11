@@ -6,3 +6,8 @@
     border-bottom: 1px solid #545454;
     margin-bottom: 40px;
 }
+@media (max-width: 500px) {
+    .header {
+        padding: 28px 27px 31px 27px;
+    }
+  }

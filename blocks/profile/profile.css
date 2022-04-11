@@ -6,3 +6,8 @@
     max-width: 880px;
     margin-bottom: 51px;
 }
+@media (max-width: 930px) {
+    .profile {
+        flex-direction: column;
+    }
+  }

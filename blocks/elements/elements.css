@@ -7,3 +7,15 @@
     row-gap: 20px;
     margin-bottom: 67px;
 }
+@media (max-width: 900px) {
+    .elements {
+        grid-template-columns: 282px 282px;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+  }
+  @media (max-width: 630px) {
+    .elements {
+        grid-template-columns: 282px;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+  }

@@ -6,4 +6,16 @@
     line-height: 48px;
     color: #FFFFFF;
     margin: 22px 18px 16px 30px;
+    display: inline-block;
 }
+@media (max-width: 930px) {
+    .profile__name {
+        text-align: center;
+    }
+  }
+@media (max-width: 600px) {
+    .profile__name {
+        font-size: 27px;
+        line-height: 33px;
+    }
+  }

@@ -13,7 +13,14 @@
     padding-right: 0;
     padding-left: 0;
     cursor: pointer;
+    text-align: center;
 }
 .popup__save:hover {
     opacity: 0.8;
 }
+@media (max-width: 530px) {
+    .popup__save {
+        font-size: 14px;
+        line-height: 17px;
+    }
+  }

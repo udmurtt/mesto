@@ -8,3 +8,14 @@
     line-height: 22px;
     color: #545454;
 }
+@media (max-width: 930px) {
+    .footer__text {
+        margin-left: 19px;
+    }
+  }
+@media (max-width: 630px) {
+    .footer__text {
+        font-size: 14px;
+        line-height: 17px;
+    }
+  }

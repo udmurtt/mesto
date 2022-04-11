@@ -1,0 +1,12 @@
+@media (max-width: 950px) {
+    .header__lodo {
+        padding-left: 27px;
+    }
+  }
+@media (max-width: 500px) {
+    .header__lodo {
+        padding-left: 0;
+        width: 104px;
+        height: 24px;
+    }
+  }

@@ -2,6 +2,7 @@
 @import url(../fonts/fonts.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/header/header.css);
+@import url(../blocks/header/__lodo/header__lodo.css);
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__conteiner/profile__conteiner.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
