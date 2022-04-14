@@ -18,55 +18,55 @@
                 <div>
                     <div>
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <button class="profile__edit-button"></button>
+                        <button class="profile__edit-button" type="button" aria-label="редактировать профиль"></button>
                     </div>
                     <p class="profile__about-me">Исследователь океана</p>
                 </div>
                 
             </div>
-            <button class="profile__add-button"></button>
+            <button class="profile__add-button" type="button" aria-label="добавить место"></button>
         </section>
         <section class="elements">
             <div class="element">
                 <img class="element__image" src="./images/karachaevsk.jpg" alt="каменный дом на фоне гор">
                 <div class="element__footer">
                     <h2 class="element__title">Карачаевск</h2>
-                    <button class="element__like"></button>
+                    <button class="element__like" type="button" aria-label="поставить лайк"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/elbrus.jpg" alt="далёкая гора">
                 <div class="element__footer">
                     <h2 class="element__title">Гора Эльбрус</h2>
-                    <button class="element__like"></button>
+                    <button class="element__like" type="button" aria-label="поставить лайк"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/dombay.jpg" alt="лес на фоне гор">
                 <div class="element__footer">
                     <h2 class="element__title">Домбай</h2>
-                    <button class="element__like"></button>
+                    <button class="element__like" type="button" aria-label="поставить лайк"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/beloemore.jpg" alt="берег моря">
                 <div class="element__footer">
                     <h2 class="element__title">Белое море</h2>
-                    <button class="element__like"></button>
+                    <button class="element__like" type="button" aria-label="поставить лайк"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/ivanovo.jpg" alt="одуванчик">
                 <div class="element__footer">
                     <h2 class="element__title">Иваново</h2>
-                    <button class="element__like"></button>
+                    <button class="element__like" type="button" aria-label="поставить лайк"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/udmurtiy.jpg" alt="автобусная остановка в сумерках">
                 <div class="element__footer">
                     <h2 class="element__title">Удмуртская Республика</h2>
-                    <button class="element__like"></button>
+                    <button class="element__like" type="button" aria-label="поставить лайк"></button>
                 </div>
             </div>
         </section>
@@ -74,13 +74,13 @@
     <footer class="footer">
         <p class="footer__text">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup popup_closed">
-        <form action="#" class="popup__conteiner">
-            <button type="reset" class="popup__close"></button>
+    <div class="popup">
+        <form action="#" class="popup__conteiner" name="userinfo" method="post">
+            <button type="reset" class="popup__close" type="button" aria-label="закрыть редактирование"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <input class="popup__user-name" type="text" name="username" placeholder="имя пользователя" value="">
             <input type="text" class="popup__user-bio" name="userbio" placeholder="кратко о себе" value="">
-            <button class="popup__save" type="submit">Сохранить</button>
+            <button class="popup__save" type="submit" aria-label="сохранить профиль">Сохранить</button>
         </form>
     </div>
     <script src="./scripts/scripts.js"></script>

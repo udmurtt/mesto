@@ -7,6 +7,10 @@
     color: #FFFFFF;
     margin: 22px 18px 16px 30px;
     display: inline-block;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		max-width: 500px;
 }
 @media (max-width: 930px) {
     .profile__name {
@@ -15,7 +19,18 @@
   }
 @media (max-width: 600px) {
     .profile__name {
-        font-size: 27px;
-        line-height: 33px;
+			max-width: 400px;
+      font-size: 27px;
+      line-height: 33px;
+    }
+  }
+	@media (max-width: 500px) {
+    .profile__name {
+			max-width: 300px;
+    }
+  }
+	@media (max-width: 400px) {
+    .profile__name {
+			max-width: 220px;
     }
   }

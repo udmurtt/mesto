@@ -14,7 +14,7 @@
     align-items: center;
 }
 .profile__add-button:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 @media (max-width: 930px) {
     .profile__add-button {

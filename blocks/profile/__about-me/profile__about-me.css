@@ -6,6 +6,10 @@
     line-height: 22px;
     color: #FFFFFF;
     margin: 0 0 36px 30px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		max-width: 550px;
 }
 @media (max-width: 930px) {
     .profile__about-me {
@@ -14,7 +18,18 @@
   }
 @media (max-width: 600px) {
     .profile__about-me {
-        font-size: 14px;
-        line-height: 17px;
+			max-width: 450px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+	@media (max-width: 500px) {
+    .profile__about-me {
+			max-width: 350px;
+    }
+  }
+	@media (max-width: 400px) {
+    .profile__about-me {
+			max-width: 260px;
     }
   }
