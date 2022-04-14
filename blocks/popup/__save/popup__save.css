@@ -1,4 +1,6 @@
 .popup__save {
+		border: none;
+		border-radius: 2px;
     background: #000000;
     font-family: "Inter", Arial, Helvetica, sans-serif;
     font-style: normal;
