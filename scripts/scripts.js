@@ -9,8 +9,8 @@ let inputbio = form.querySelector('.popup__user-bio');
 
 function popupOpen() {
     popup.classList.add('popup_is-opened');
-    popup.querySelector('.popup__user-name').value = namecontent.textContent;
-    popup.querySelector('.popup__user-bio').value = aboutmecontent.textContent;
+    inputname.value = namecontent.textContent;
+    inputbio.value = aboutmecontent.textContent;
 }
 editButton.addEventListener('click', popupOpen);
 
