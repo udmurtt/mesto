@@ -27,7 +27,7 @@
             <button class="profile__add-button" type="button" aria-label="добавить место"></button>
         </section>
         <section class="elements">
-            <div class="element">
+<!--						<div class="element">
                 <img class="element__image" src="./images/karachaevsk.jpg" alt="каменный дом на фоне гор">
                 <div class="element__footer">
                     <h2 class="element__title">Карачаевск</h2>
@@ -67,8 +67,9 @@
                 <div class="element__footer">
                     <h2 class="element__title">Удмуртская Республика</h2>
                     <button class="element__like" type="button" aria-label="поставить лайк"></button>
+										<button class="element__delete" type="button" aria-label="удалить карточку"></button>
                 </div>
-            </div>
+            </div>-->
         </section>
     </main>
     <footer class="footer">
@@ -83,6 +84,15 @@
             <button class="popup__save" type="submit" aria-label="сохранить профиль">Сохранить</button>
         </form>
     </div>
+		<div class="popup popup-cards">
+			<form action="#" class="popup__conteiner" name	="placeinfo" method="post">
+					<button type="reset" class="popup__close" aria-label="закрыть добавление карточки"></button>
+					<h2 class="popup__title">Новое место</h2>
+					<input class="popup__user-name" type="text" name="placename" placeholder="Название" value="">
+					<input type="link" class="popup__user-bio" name="imagesrc" placeholder="Ссылка на картинку" value="">
+					<button class="popup__save" type="submit" aria-label="создать карточку">Создать</button>
+			</form>
+	</div>
     <script src="./scripts/scripts.js"></script>
 </body>
 </html>
