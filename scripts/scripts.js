@@ -86,16 +86,14 @@ const renderInitialCards = (initialCardsData) => {
 		`)
 		let likeButton = document.querySelector('.element__like');
 		likeButton.addEventListener('click', cardIsLiked);
-		
+		function cardIsLiked(evt) {
+			evt.target.closest('.element__like').classList.toggle('element__like_active');
+		}
     const cardDeleteButton = document.querySelector('.element__delete');
     cardDeleteButton.addEventListener('click', handleDeleteCard);
 
     const cardImg = document.querySelector('.element__image');
     cardImg.addEventListener('click', popupImgOpen);
-}
-
-function cardIsLiked(evt) {
-  evt.target.closest('.element__like').classList.toggle('element__like_active');
 }
 
     const handleDeleteCard = (event) => {
