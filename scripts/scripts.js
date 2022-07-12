@@ -1,7 +1,6 @@
 const profilePopup = document.querySelector('.popup_profile');
 const cardsPopup = document.querySelector('.popup_cards');
 const imagePopup = document.querySelector('.popup_img');
-
 const buttonEdit = document.querySelector('.profile__edit-button');
 const buttonClose = profilePopup.querySelector('.popup__close');
 const nameContent = document.querySelector('.profile__name');
@@ -10,31 +9,29 @@ const formProfileEdit = profilePopup.querySelector('.popup__conteiner');
 const inputName = formProfileEdit.querySelector('.popup__user-name');
 const inputBio = formProfileEdit.querySelector('.popup__user-bio');
 
-function popupOpen() {
-  
-  profilePopup.classList.add('popup_is-opened');
+function openPopup(evt) {
+  evt.classList.add('popup_is-opened');
 }
-
 function openPropfilePopup() { 
   inputName.value = nameContent.textContent;
   inputBio.value = aboutMeContent.textContent;
-  popupOpen();
+  openPopup(profilePopup);
 }
 
 buttonEdit.addEventListener('click', openPropfilePopup);
 
-function popupClose() {
-	document.querySelector('.popup_is-opened').classList.remove('popup_is-opened');
+function closePopup() {
+  document.querySelector('.popup_is-opened').classList.remove('popup_is-opened');
 }
-buttonClose.addEventListener('click', popupClose);
+buttonClose.addEventListener('click', closePopup);
 
-function formSubmitHandler (evt) {
-    evt.preventDefault(); 
-    nameContent.textContent = inputName.value;
-    aboutMeContent.textContent = inputBio.value;
-		popupClose();
+function submitEditProfileForm (evt) {
+  evt.preventDefault(); 
+  nameContent.textContent = inputName.value;
+  aboutMeContent.textContent = inputBio.value;
+  closePopup();
 }
-formProfileEdit.addEventListener('submit', formSubmitHandler);
+formProfileEdit.addEventListener('submit', submitEditProfileForm);
 
 // массив
 const initialCards = [
@@ -64,75 +61,64 @@ const initialCards = [
   }
 ];
 // дом элементы
-
 const cardsConteiner = document.querySelector('.elements');
+const cardTemplate = document.querySelector('.template').content.querySelector('.element');
 const cardsEditButton = document.querySelector('.profile__add-button');
 const cardsEditCloseBatton = cardsPopup.querySelector('.popup__close');
 const cardsEditForm = cardsPopup.querySelector('.popup__conteiner');
 const inputPlaceName = cardsEditForm.querySelector('.popup__user-name');
 const inputImageSrc = cardsEditForm.querySelector('.popup__user-bio');
 
-// рендер карточки
-const renderInitialCards = (initialCardsData) => {
-		cardsConteiner.insertAdjacentHTML('afterbegin', `
-		<div class="element">
-								<button class="element__delete" type="button" aria-label="удалить карточку"></button>
-                <img class="element__image" src="${initialCardsData.link}" alt="">
-                <div class="element__footer">
-                    <h2 class="element__title">${initialCardsData.name}</h2>
-                    <button class="element__like" type="button" aria-label="поставить лайк"></button>
-                </div>
-            </div>
-		`)
-		let likeButton = document.querySelector('.element__like');
-		likeButton.addEventListener('click', cardIsLiked);
-		function cardIsLiked(evt) {
-			evt.target.closest('.element__like').classList.toggle('element__like_active');
-		}
-    const cardDeleteButton = document.querySelector('.element__delete');
-    cardDeleteButton.addEventListener('click', handleDeleteCard);
-
-    const cardImg = document.querySelector('.element__image');
-    cardImg.addEventListener('click', popupImgOpen);
+//созданиее карточки
+const generateCard = (cardData) => {
+  const newCard = cardTemplate.cloneNode(true);
+  newCard.querySelector('.element__image').src = cardData.link;
+  newCard.querySelector('.element__title').textContent = cardData.name;
+  return newCard;
 }
-
-    const handleDeleteCard = (event) => {
-      event.target.closest('.element').remove();
-    }
-
-initialCards.forEach((initialCardsData) => {
-		renderInitialCards(initialCardsData);
+// добавление карточки
+const addCard = (cardData) => {
+  cardsConteiner.prepend(generateCard(cardData));
+  const cardDeleteButton = cardsConteiner.querySelector('.element__delete');
+  cardDeleteButton.addEventListener('click', handleDeleteCard);
+  const likeButton = cardsConteiner.querySelector('.element__like');
+  likeButton.addEventListener('click', toggleLike);
+  const cardImg = cardsConteiner.querySelector('.element__image');
+  cardImg.addEventListener('click', openImagePopup);
+}
+  const handleDeleteCard = (event) => {
+    event.target.closest('.element').remove();
+  }
+initialCards.forEach((cardData) => {
+  addCard(cardData);
 });
-
-function popupForCardsEditOpen() {
-	cardsPopup.classList.add('popup_is-opened');
+function openPopupForCardsEdit() {
+  openPopup(cardsPopup);
 }
-cardsEditButton.addEventListener('click', popupForCardsEditOpen);
+cardsEditButton.addEventListener('click', openPopupForCardsEdit);
+cardsEditCloseBatton.addEventListener('click', closePopup);
 
-
-cardsEditCloseBatton.addEventListener('click', popupClose);
-
-function cardsEditFormSubmitHandler (evt) {
-	evt.preventDefault();
-	renderInitialCards({ name: inputPlaceName.value, link: inputImageSrc.value });
-	popupClose();
+// поставить лайк
+function toggleLike (evt) {
+  evt.target.closest('.element__like').classList.toggle('element__like_active');
+}
+function handlerCardsEditFormSubmit (evt) {
+  evt.preventDefault();
+  addCard({ name: inputPlaceName.value, link: inputImageSrc.value });
+  closePopup();
   inputPlaceName.value = '';
   inputImageSrc.value = '';
 }
-cardsEditForm.addEventListener('submit', cardsEditFormSubmitHandler);
-
+cardsEditForm.addEventListener('submit', handlerCardsEditFormSubmit);
 const popupImgBacground = imagePopup.querySelector('.popup__image');
 const popupImgTitle = imagePopup.querySelector('.popup__img-title');
 const popupImgCloseBatton = imagePopup.querySelector('.popup__close');
 
-function popupImgOpen(event) {
-	imagePopup.classList.add('popup_is-opened');
+function openImagePopup(event) {
+  openPopup(imagePopup);
   popupImgBacground.src = event.target.closest('.element__image').src;
+  popupImgBacground.alt = event.target.closest('.element__image').alt;
   popupImgTitle.textContent = event.target.closest('.element').querySelector('.element__title').textContent;
 }
-
-
-
-
-popupImgCloseBatton.addEventListener('click', popupClose);
+popupImgCloseBatton.addEventListener('click', closePopup);
 
